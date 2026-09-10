@@ -5,20 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇩🇰 DK 01 - xiaohe
-  type: vless
-  server: fq.jp188.dpdns.org
-  port: 443
-  uuid: 42c62a5a-cd31-4551-80ef-908732370287
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: fq.jp188.dpdns.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: fq.jp188.dpdns.org
-- name: 🇩🇰 DK 02 - xiaohe
   type: ss
   server: 38.180.214.110
   port: 5600
@@ -31,13 +17,11 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇩🇰 DK 01 - xiaohe
-  - 🇩🇰 DK 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇩🇰 DK 01 - xiaohe
-  - 🇩🇰 DK 02 - xiaohe
 rules:
 - MATCH,PROXIES
